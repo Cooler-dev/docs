@@ -1,0 +1,29 @@
+{
+  "name": "cooler-docs",
+  "version": "1.0.0",
+  "description": "Cooler帮助文档",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vitepress build docs",
+    "dev": "vitepress dev docs",
+    "serve": "vitepress serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cooler-dev/Cooler-Docs.git"
+  },
+  "keywords": [
+    "Cooler",
+    "docs"
+  ],
+  "author": "Cooler-dev",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Cooler-dev/Cooler-Docs/issues"
+  },
+  "homepage": "https://github.com/Cooler-dev/Cooler-Docs#readme",
+  "dependencies": {
+    "vitepress": "^1.0.0-alpha.2"
+  }
+}
