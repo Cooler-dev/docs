@@ -26,7 +26,7 @@ catch_rules:
             
             
             - search: _ 
-              replace: docroot/cooler-docs@1.0.0/docs/.vitepress/dist
+              replace: docroot/cooler-docs@1.0.1/docs/.vitepress/dist
 
 
             - search: ^https\:\/\/docroot
