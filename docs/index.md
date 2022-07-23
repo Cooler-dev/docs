@@ -17,14 +17,11 @@ hero:
     text: View on GitHub
     link: https://github.com/Cooler-dev/Cooler-backend
 features:
-  - icon: 🍃
-    title: 轻量
-    details: 使用Javascript开发，性能强悍，反应迅速
-  - icon: ⚡️
-    title: 快捷
-    details: 可视化操作，无需编程基础
-  - icon: 🍱
-    title: 跨平台
-    details: 支持服务器、Heroku、Vercel、Cloudflare Wroker、腾讯云函数等平台部署
+    - title: 轻量
+      details: 使用Golang开发，性能强悍，反应迅速
+    - title: 快捷
+      details: 部署简单，使用方便
+    - title: 免费
+      details: 程序与主题开源，不会产生任何费用
 ---
 

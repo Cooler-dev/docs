@@ -9,6 +9,7 @@ export default {
         }
       },
     themeConfig: {
+        logo: '/assets/logo.png',
         nav: [
             { text: '指南', link: '/guide/intro' },
             { text: '开发', link: '/dev/backend' },

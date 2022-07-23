@@ -1,0 +1,88 @@
+name: CoolerDocs
+cleaninterval: 1000*20
+catch_rules: 
+    - rule: _ 
+      transform_rules: 
+            - search: \#.*
+              searchin: url 
+              replace: ''
+            - search: \?.* 
+              replace: '' 
+            - search: ([^\/.]+)\/index(|\.html)$ 
+              action: redirect
+              redirect: 
+                to: $1/
+                
+            - search: \/([^\/.]+)$ 
+              action: redirect
+              redirect: 
+                to: /$1.html
+                status: 301
+            
+            - search: ([^\/.]+)\/$ 
+              replace: $1/index.html
+              
+              
+            
+            
+            - search: _ 
+              replace: docroot/cooler-docs@1.0.0/docs/.vitepress/dist
+
+
+            - search: ^https\:\/\/docroot
+              replace:
+                - https://cdn.jsdelivr.net/npm
+                - https://cdn1.tianli0.top/npm
+                - https://jsd.onmicrosoft.cn/npm
+                - https://unpkg.onmicrosoft.cn
+                - https://unpkg.com
+                - https://npm.sourcegcdn.com
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+              
+              action: fetch
+              
+              fetch:
+                status: 200
+                engine: parallel
+                preflight: false
+                timeout: 5000
+                cache:
+                  expire: 1000*10
+                  delay: 3000
+              
+            - search: \.html$ 
+              header: 
+                content-type: text/html;charset=utf-8
+                ServerProvide: ClientWorker
+
+
+
+          
+    - rule: .*
+      transform_rules:
+        - search: .*
+          action: fetch
+          fetch:
+            enable: true
+            engine: fetch
+            preflight: false
+        
+        - search: (^4|^5)
+          searchin: status
+          action: return
+          return: 
+            body: Error!
+            header:
+              content-type: text/plain;charset=utf-8
+              ServerProvide: ClientWorker
+            status: 503
